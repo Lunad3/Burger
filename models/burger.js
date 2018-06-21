@@ -7,8 +7,8 @@ var burgers = {
     insertOne:function(name,run){
         orm.insertOne(name,run);
     },
-    updateOne:function(index,newName,run){
-        orm.updateOne(index,newName,run);
+    updateOne:function(index,newDevouredState,run){
+        orm.updateOne(index,newDevouredState,run);
     }
 }
 

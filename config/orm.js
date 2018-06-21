@@ -15,8 +15,9 @@ var orm = {
             run(results);
         });
     },
-    updateOne:function(index,newName,run){
-        var queryStr = "UPDATE burgers SET burger_name='" + newName + "' WHERE id=" + id +";";
+    updateOne:function(id,newDevouredState,run){
+        var queryStr = "UPDATE burgers SET devoured=" + newDevouredState + " WHERE id=" + id +";";
+        console.log(queryStr);
         db.query(queryStr,function(err,result){
             if(err) throw err;
             run(result);
