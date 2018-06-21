@@ -7,9 +7,12 @@ var orm = {
             run(result);
         });
     },
-    insertOne:function(table,cols,vals,run){
-        
+    insertOne:function(table,name,run){
+        db.query("INSERT INTO " + table + " (burger_name) Values")
+
     },
     //updateOne:
     selectAll:function(){},
 }
+
+module.exports = orm;
