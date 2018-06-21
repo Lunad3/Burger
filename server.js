@@ -18,6 +18,3 @@ app.use(routes);
 app.listen(PORT,function(){
     console.log("App now listenig at localhost:" + PORT)
 });
-
-
-

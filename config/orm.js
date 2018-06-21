@@ -1,18 +1,27 @@
 var db = require("../config/connection");
 
 var orm = {
-    selectAll:function(table,run){
-        db.query("SELECT * FROM " + table + ";", function(err,result){
+    selectAll:function(run){
+        db.query("SELECT * FROM burgers;", function(err,result){
             if(err) throw err;
             run(result);
         });
     },
-    insertOne:function(table,name,run){
-        db.query("INSERT INTO " + table + " (burger_name) Values")
-
+    insertOne:function(name,run){
+        var queryStr = "INSERT INTO burgers (burger_name) VALUES ('" + name + "');";
+        console.log(queryStr);
+        db.query(queryStr,function(err,results){
+            if (err) throw err;
+            run(results);
+        });
     },
-    //updateOne:
-    selectAll:function(){},
+    updateOne:function(index,newName,run){
+        var queryStr = "UPDATE burgers SET burger_name='" + newName + "' WHERE id=" + id +";";
+        db.query(queryStr,function(err,result){
+            if(err) throw err;
+            run(result);
+        });
+    }
 }
 
 module.exports = orm;
