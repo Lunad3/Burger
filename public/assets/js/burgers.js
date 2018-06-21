@@ -19,7 +19,6 @@ $(function(){
         event.preventDefault();
         var newBurger = {
             burger_name: $("#newBurger").val().trim(),
-            devoured: $("[name=devoured]:checked").val().trim()
         };
         $.ajax("/api/burgers", {
             type: "POST",
